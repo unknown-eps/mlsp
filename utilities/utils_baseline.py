@@ -8,7 +8,7 @@ class BaseUtilsImdb:
     This class is used to build utilities for the baseline model
     The split defines the percentage of the data to be used for validation from the training data
     '''
-    def __init__(self,split=0.1,random_seed=42):
+    def __init__(self,split=0.1,random_seed=42,clean_text=False):
         '''
         It initializes the class with the tokenizer and the dataset and splits the data into training, validation and test data
         Stratify by column is used to ensure that the distribution of the labels is the same in the training and validation data
@@ -22,6 +22,10 @@ class BaseUtilsImdb:
         self.train_data = train_val_split['train']
         self.val_data = train_val_split['test']
         self.test_data = test_data
+        if clean_text:
+            self.train_data = self.train_data.map(lambda example: {'text': self.clean_text(example['text'])})
+            self.val_data = self.val_data.map(lambda example: {'text': self.clean_text(example['text'])})
+            self.test_data = self.test_data.map(lambda example: {'text': self.clean_text(example['text'])})
     
     def tokenize_function(self,examples):
         '''
@@ -46,15 +50,19 @@ class BaseUtilsImdb:
         return tokenized_train_data, tokenized_val_data, tokenized_test_data
     
     
-    #TODO: Add the function to clean the text
-    @classmethod
-    def clean_text(cls,text):
+    def clean_text(self,text):
         '''
         It removes the html tags from the text and replaces multiple spaces with a single space
         '''
-        raise NotImplementedError     
+        import re
+        from bs4 import BeautifulSoup
+        # Remove HTML tags
+        text = BeautifulSoup(text, 'html.parser').get_text()
+        #Remove multiple spaces,newlines and tabs with a single space
+        text = re.sub(r'\n\s*\n+', '\n', text) # Remove multiple newlines with a single newline
+        text = re.sub(r'(?<=\S)[ ]{2,}', ' ', text)  # Ensures only consecutive spaces collapse
 
-        return text
+        return text.strip()
     
     @classmethod
     def compute_metric_accuracy(cls,eval_pred):

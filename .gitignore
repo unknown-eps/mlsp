@@ -1,3 +1,5 @@
 time.txt
 test_acc.txt
 __pycache__/
+test*
+temp*
