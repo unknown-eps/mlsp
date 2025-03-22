@@ -1,0 +1,38 @@
+#This file contains the results of experiments done with using the embeddings of the CLS head in DistilBert
+#All Parameters of the model were allowed be trainable including an extra MLP head.
+#10% of the training set was used as validation set.(This fraction will be kept same throughout the experiment)
+#Random Seed of 42 will be used where ever needed.
+#Models were trained for four epochs but the best model on the basis of validation loss was chosen.
+#The hyperparameters were taken from the original BERT paper.
+
+Important:
+***Transfer the logs formed they contain curves which will be used later***
+*******************************Summary of Model Performance******************************************
+###
+Batch_size=32 Lr=5e-5
+
+Time Taken:
+
+Test Accuracy:
+
+###
+Batch_size=32 Lr=2e-5
+
+Time Taken:
+
+Test Accuracy:
+
+
+###
+Batch_size=16 Lr=5e-5
+
+Time Taken:
+
+Test Accuracy:
+
+###
+Batch_size=16 Lr=2e-5
+
+Time Taken:
+
+Test Accuracy:
