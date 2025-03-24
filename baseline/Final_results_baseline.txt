@@ -4,10 +4,22 @@
 #Random Seed of 42 will be used where ever needed.
 #Models were trained for four epochs but the best model on the basis of validation loss was chosen.
 #The hyperparameters were taken from the original BERT paper.
-
+# Fp16 was used for batch size 64
+# From out first run we find that after 2 epochs model start over fitting so we restrict the number of epochs to two
 Important:
 ***Transfer the logs formed they contain curves which will be used later***
 *******************************Summary of Model Performance******************************************
+### TODO store it's logs
+Batch_size=64 Lr=5e-5 FP16=True clean_text=True epochs=4
+Time taken:1645  Test Accuracy:92.82
+
+
+###
+Batch_size=64 Lr=5e-5 FP16=True clean_text=False epochs=4
+Time taken:1503  Test Accuracy:92.16
+
+## From these experiments we decide to clean the text before running any further experiments also only the clean text version is stored in logs.
+
 ###
 Batch_size=32 Lr=5e-5
 
