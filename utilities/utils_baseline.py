@@ -81,3 +81,60 @@ class BaseUtilsImdb:
         '''
         with open('time.txt','a+') as f:
             f.write(f'Batch size {batch_size}:epochs={epochs}:{int(end_time-start_time)} seconds\n')
+            
+            
+class BaseUtilsCola:
+    def __init__(self,random_seed=42):
+        self.tokenizer = DistilBertTokenizerFast.from_pretrained('distilbert-base-uncased')
+        self.dataset = load_dataset("glue", "cola")
+        self.random_seed = random_seed
+        self.train_data = self.dataset['train']
+        self.val_data = self.dataset['validation']
+        self.test_data = self.dataset['test']
+        
+    def tokenize_function(self,examples):
+        '''
+        Tokenize the text column of the input examples
+        Cuts the text if it is longer than the maximum length of the model
+        The responsibilty of the padding is left to the dataloader
+        '''
+        return self.tokenizer(examples['sentence'], truncation=True)
+    
+    def get_tokenized_datasets(self):
+        '''
+        Tokenize the training, validation and test data
+        '''
+        tokenized_train_data = self.train_data.map(self.tokenize_function, batched=True)
+        tokenized_val_data = self.val_data.map(self.tokenize_function, batched=True)
+        tokenized_test_data = self.test_data.map(self.tokenize_function, batched=True)
+        
+        tokenized_train_data = tokenized_train_data.remove_columns(['sentence'])
+        tokenized_val_data = tokenized_val_data.remove_columns(['sentence'])
+        tokenized_test_data = tokenized_test_data.remove_columns(['sentence'])
+        
+        return tokenized_train_data, tokenized_val_data, tokenized_test_data
+    
+    @classmethod
+    def compute_metric_mcc(cls, eval_pred):
+        '''
+        Computes the Matthews correlation coefficient (MCC) for the CoLA dataset.
+        '''
+        matthews_corr = evaluate.load("matthews_correlation")
+        logits, labels = eval_pred
+        predictions = logits.argmax(axis=-1)
+        return matthews_corr.compute(predictions=predictions, references=labels)
+    
+    @classmethod
+    def write_time(cls,start_time,end_time,batch_size,epochs):
+        '''
+        It writes the time taken to train the model
+        '''
+        with open('time.txt','a+') as f:
+            f.write(f'Batch size {batch_size}:epochs={epochs}:{int(end_time-start_time)} seconds\n')
+            
+    def save_predictions(self, predictions,name):
+        import pandas as pd
+
+        df = pd.DataFrame({'Label':predictions,"Id":list(1,range(len(predictions)+1))})
+        df.to_csv(name, index=False)
+        
