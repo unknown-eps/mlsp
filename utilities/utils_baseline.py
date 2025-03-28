@@ -135,6 +135,6 @@ class BaseUtilsCola:
     def save_predictions(self, predictions,name):
         import pandas as pd
 
-        df = pd.DataFrame({'Label':predictions,"Id":list(1,range(len(predictions)+1))})
-        df.to_csv(name, index=False)
+        df = pd.DataFrame({'Label':predictions,"Id":list(range(1,len(predictions)+1))})
+        df.to_csv(name+'.csv', index=False)
         

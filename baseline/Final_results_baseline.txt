@@ -10,7 +10,7 @@ Important:
 ***Transfer the logs formed they contain curves which will be used later***
 *******************************Summary of Model Performance******************************************
 ### TODO store it's logs
-Batch_size=64 Lr=5e-5 FP16=True clean_text=True epochs=4
+Batch_size=64 Lr=5e-5 FP16=True clean_text=True epochs=4 selection_criterion=eval_loss
 Time taken:1645  Test Accuracy:92.82
 
 
