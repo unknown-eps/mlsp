@@ -3,3 +3,6 @@ test_acc.txt
 __pycache__/
 test*
 temp*
+test/*
+temp/*
+.vscode
