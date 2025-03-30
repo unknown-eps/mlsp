@@ -11,18 +11,19 @@ Train Time:
 In Domain MCC
 Out of Domain MCC
 
-# Batch size = 32 lr =1e-5 selection_criterion=eval_loss
-
-Train Time: 
-In Domain MCC
-Out of Domain MCC
-
 # Batch_size = 32 lr =5e-5 selection_criterion=eval_matthews_correlation
 Train Time: 
 In Domain MCC
 Out of Domain MCC
 
-# Batch size = 32 lr =1e-5 selection_criterion=eval_matthews_correlation
+# Batch size = 32 lr =2e-5 selection_criterion=eval_loss
+
+Train Time: 
+In Domain MCC
+Out of Domain MCC
+
+
+# Batch size = 32 lr =2e-5 selection_criterion=eval_matthews_correlation
 
 Train Time: 
 In Domain MCC
