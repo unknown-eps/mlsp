@@ -20,8 +20,16 @@ Time taken:1503  Test Accuracy:92.16
 
 ## From these experiments we decide to clean the text before running any further experiments also only the clean text version is stored in logs.
 
-###
-Batch_size=32 Lr=5e-5
+###Prananv
+Batch_size=32 Lr=5e-5 selection_criterion=accuracy
+
+Time Taken:
+
+Test Accuracy:
+
+
+###Pranav
+Batch_size=32 Lr=5e-5 selection_criterion=eval_loss
 
 Time Taken:
 
