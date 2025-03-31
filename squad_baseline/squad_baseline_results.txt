@@ -1,0 +1,4 @@
+## Batch size 32 lr=5e-5 epochs=4
+Time Taken:11575.0175
+EM=74.49
+F1=83.73
