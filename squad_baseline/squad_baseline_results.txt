@@ -2,3 +2,8 @@
 Time Taken:11575.0175
 EM=74.49
 F1=83.73
+
+##Batch size 32 lr=2e-5 epochs=4
+Time Taken:11739.0718
+EM:75.49
+F1:84.32
