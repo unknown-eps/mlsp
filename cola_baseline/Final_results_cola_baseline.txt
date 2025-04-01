@@ -6,25 +6,25 @@ https://www.kaggle.com/c/cola-in-domain-open-evaluation/data?select=cola_in_doma
 https://www.kaggle.com/c/cola-out-of-domain-open-evaluation (Out of Domain)
 
 
-# Batch_size = 32 lr =5e-5 selection_criterion=eval_loss
-Train Time: 
-In Domain MCC
-Out of Domain MCC
+# Batch_size = 32 lr =5e-5 selection_criterion=eval_loss FP16 = True epochs = 4
+Train Time: 493.7358
+In Domain MCC : 0.40785
+Out of Domain MCC : 
 
-# Batch_size = 32 lr =5e-5 selection_criterion=eval_matthews_correlation
-Train Time: 
-In Domain MCC
-Out of Domain MCC
+# Batch_size = 32 lr =5e-5 selection_criterion=eval_matthews_correlation FP16 = True epochs = 4
+Train Time: 398.3347
+In Domain MCC : 0.50928
+Out of Domain MCC : 0.43514
 
-# Batch size = 32 lr =2e-5 selection_criterion=eval_loss
+# Batch size = 32 lr =2e-5 selection_criterion=eval_loss FP16 = True epochs = 4
 
-Train Time: 
-In Domain MCC
-Out of Domain MCC
+Train Time: 383.9124
+In Domain MCC : 0.49616
+Out of Domain MCC : 0.41533
 
 
-# Batch size = 32 lr =2e-5 selection_criterion=eval_matthews_correlation
+# Batch size = 32 lr =2e-5 selection_criterion=eval_matthews_correlation FP16 = True epochs = 4
 
-Train Time: 
-In Domain MCC
-Out of Domain MCC
+Train Time: 401.8956
+In Domain MCC : 0.57025
+Out of Domain MCC : 0.43993
