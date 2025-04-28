@@ -1,0 +1,18 @@
+#This file contains the results of experiments done with using the embeddings of the CLS head in DistilBert
+#All Parameters of the model were allowed be trainable including an extra MLP head.
+#10% of the training set was used as validation set.(This fraction will be kept same throughout the experiment)
+#Random Seed of 42 will be used where ever needed.
+#Models were trained for four epochs but the best model on the basis of validation loss was chosen.
+#The hyperparameters were taken from the original BERT paper.
+# Fp16 was used for batch size 64
+# From out first run we find that after 2 epochs model start over fitting so we restrict the number of epochs to two
+Important:
+***Transfer the logs formed they contain curves which will be used later***
+*******************************Summary of Model Performance******************************************
+### TODO store it's logs
+
+Batch_size=32 Lr=5e-5 selection_criterion=eval_loss clean_text=True epochs = 3 FP16=True
+
+Time Taken: 3:1204
+Test Accuracy:0.8982
+

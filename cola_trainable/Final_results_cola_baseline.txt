@@ -1,0 +1,12 @@
+## Since the model is quick to train we train for 4 epochs and select the best one according to a selection_criterion
+## THe predictions need to be sumitted at
+https://www.kaggle.com/c/cola-in-domain-open-evaluation/data?select=cola_in_domain_test.tsv  (In domain)
+
+
+https://www.kaggle.com/c/cola-out-of-domain-open-evaluation (Out of Domain)
+
+# Batch size = 32 lr =2e-5 selection_criterion=eval_matthews_correlation FP16 = True epochs = 4
+
+Time Taken: 240.188
+In Domain MCC : 0.37028
+Out of Domain MCC : 0.21662
