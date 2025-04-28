@@ -1,0 +1,24 @@
+Rank : 32
+
+In Domain MCC : 0.43070
+Out of Domain MCC : 0.28385
+
+Rank : 64
+
+In Domain MCC : 0.46257
+Out of Domain MCC : 0.33615
+
+Rank : 128
+
+In Domain MCC :  0.46408
+Out of Domain MCC : 0.40081
+
+Rank : 256
+
+In Domain MCC : 0.48411
+Out of Domain MCC : 0.40137
+
+Rank : 512
+
+In Domain MCC : 0.48000
+Out of Domain MCC : 0.39494
