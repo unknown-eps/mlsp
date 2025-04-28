@@ -1,2 +1,10 @@
 # We fix lora alpha to 2*r to reduce the number of hyperparameters
-
+Rank = 16
+Accuracy:91.72
+Time taken:2207
+%trainable parameter:1.07
+Rank = 32
+Accuracy:0.9204
+Time taken:2228
+%trainable parameter:2.1582
+Logs saved
