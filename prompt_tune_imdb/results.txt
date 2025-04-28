@@ -1,7 +1,7 @@
 All models are trained for 3 epochs
 ###
 Num of tokens =10
-Fp16 = False
+Fp16 = True
 Time taken:2079.6646807193756
 accuracy: 0.81048
 ### 
