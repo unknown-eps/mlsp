@@ -1,7 +1,7 @@
 Epochs:3
 Batch size:64
 rank:16
-'exact_match': 41.485335856196784, 'f1': 52.57865198967113
+{'exact_match': 52.36518448438978, 'f1': 63.580713078933016}
 Time taken:2321.3689
 
 Epochs:3
