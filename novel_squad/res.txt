@@ -7,3 +7,4 @@ rank:16
 Epochs:3
 Batch size =64
 rank = 64
+{'exact_match': 64.5127719962157, 'f1': 75.0879292910171}
