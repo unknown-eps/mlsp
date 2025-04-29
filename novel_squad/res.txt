@@ -1,1 +1,9 @@
-##SQUAD
+##SQUAD Novel (Both bias and layernorm)
+Epochs:3
+Batch size:64
+rank:16
+{'exact_match': 53.528855250709555, 'f1': 64.60141171409575}
+####
+Epochs:3
+Batch size =64
+rank = 64
