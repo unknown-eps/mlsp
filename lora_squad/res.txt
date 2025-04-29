@@ -1,0 +1,5 @@
+Epochs:2
+Batch size:64
+rank:16
+EM:,F1:
+Time taken:
