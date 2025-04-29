@@ -1,5 +1,11 @@
 Epochs:2
 Batch size:64
 rank:16
-EM:,F1:
-Time taken:
+'exact_match': 41.485335856196784, 'f1': 52.57865198967113
+Time taken:2321.3689
+
+Epochs:3
+Batch size =64
+rank = 64
+
+Time taken
